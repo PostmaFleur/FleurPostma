@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fleur Postma — cv</title>
+    <style>
+      @font-face {
+        font-family: Inter;
+        src: url("../fonts/inter-400.woff2") format("woff2");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: Inter;
+        src: url("../fonts/inter-500.woff2") format("woff2");
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: Inter;
+        src: url("../fonts/inter-600.woff2") format("woff2");
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        background: #1a1a1a;
+        color: #1c1c1c;
+        font-family: Inter, Helvetica, Arial, sans-serif;
+      }
+
+      .toolbar {
+        width: min(210mm, calc(100% - 32px));
+        margin: 22px auto 0;
+        display: flex;
+        justify-content: flex-end;
+        gap: 8px;
+      }
+
+      .toolbar a,
+      .toolbar button {
+        appearance: none;
+        border: 0;
+        background: #2c2c2c;
+        color: #f3f3f3;
+        font: inherit;
+        font-size: 13px;
+        text-decoration: none;
+        padding: 8px 12px;
+        border-radius: 999px;
+        cursor: pointer;
+      }
+
+      .toolbar a:hover,
+      .toolbar button:hover {
+        background: #3a3a3a;
+      }
+
+      .sheet {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 18px auto 40px;
+        padding: 15mm 16mm 14mm;
+        background: #fff;
+        box-shadow: 0 16px 50px rgb(0 0 0 / 32%);
+      }
+
+      .head {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 8mm;
+        align-items: start;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 22px;
+        font-weight: 500;
+        letter-spacing: -0.025em;
+        line-height: 1.05;
+      }
+
+      .role {
+        margin: 4px 0 0;
+        color: #6f6f6f;
+        font-size: 13px;
+        line-height: 1.3;
+      }
+
+      .contact {
+        margin: 2px 0 0;
+        text-align: right;
+        color: #6f6f6f;
+        font-size: 11.5px;
+        line-height: 1.55;
+      }
+
+      .contact a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .block {
+        display: grid;
+        grid-template-columns: 34mm 1fr;
+        column-gap: 8mm;
+        margin-top: 8.5mm;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 13.5px;
+        font-weight: 500;
+        letter-spacing: -0.01em;
+        line-height: 1.25;
+      }
+
+      .profile {
+        margin: 0;
+        max-width: 148mm;
+        color: #1c1c1c;
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      .items {
+        display: flex;
+        flex-direction: column;
+        gap: 5.2mm;
+      }
+
+      .job {
+        display: grid;
+        grid-template-columns: 54mm 1fr;
+        column-gap: 6mm;
+        align-items: start;
+      }
+
+      h3 {
+        margin: 0;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: -0.011em;
+        line-height: 1.3;
+      }
+
+      .org,
+      .detail,
+      .when {
+        margin: 0;
+        line-height: 1.35;
+      }
+
+      .org {
+        margin-top: 1px;
+        font-size: 12px;
+      }
+
+      .detail,
+      .when {
+        color: #8a8a8a;
+        font-size: 11px;
+      }
+
+      .when {
+        margin-top: 2px;
+      }
+
+      .text {
+        margin: 0;
+        color: #3d3d3d;
+        font-size: 11.5px;
+        line-height: 1.45;
+      }
+
+      .schools {
+        display: flex;
+        flex-direction: column;
+        gap: 4.5mm;
+      }
+
+      .skills {
+        display: grid;
+        grid-template-columns: 1.15fr 1.7fr 0.7fr;
+        column-gap: 6mm;
+      }
+
+      .cols {
+        columns: 2;
+        column-gap: 5mm;
+      }
+
+      .skills p {
+        margin: 0 0 1.5mm;
+        color: #8a8a8a;
+        font-size: 10.5px;
+      }
+
+      .skills ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .skills li {
+        color: #3d3d3d;
+        font-size: 11.5px;
+        line-height: 1.45;
+      }
+
+      @media screen and (max-width: 800px) {
+        .sheet {
+          width: auto;
+          min-height: 0;
+          margin: 16px 12px 28px;
+          padding: 24px 18px 28px;
+        }
+
+        .head,
+        .block,
+        .job,
+        .skills {
+          display: block;
+        }
+
+        .contact {
+          text-align: left;
+          margin-top: 12px;
+        }
+
+        h2 {
+          margin-bottom: 8px;
+        }
+
+        .meta {
+          margin-bottom: 4px;
+        }
+
+        .skills div + div {
+          margin-top: 12px;
+        }
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      @media print {
+        html,
+        body {
+          background: #fff;
+        }
+
+        .toolbar {
+          display: none !important;
+        }
+
+        .sheet {
+          width: 210mm;
+          min-height: 297mm;
+          margin: 0;
+          box-shadow: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="toolbar">
+      <a href="fleur-postma.pdf" download>Download PDF</a>
+      <button type="button" onclick="window.print()">Print</button>
+    </div>
+
+    <article class="sheet">
+      <header class="head">
+        <div>
+          <h1>Fleur Postma</h1>
+          <p class="role">Grafisch vormgever en contentmaker</p>
+        </div>
+        <p class="contact">
+          <a href="mailto:fleur@ntfd.nl">fleur@ntfd.nl</a><br />
+          <a href="tel:+31619981338">+31 6 19981338</a><br />
+          Almere<br />
+          @postmafleur
+        </p>
+      </header>
+
+      <section class="block" aria-labelledby="profiel">
+        <h2 id="profiel">Profiel</h2>
+        <p class="profile">
+          Grafisch vormgever en oprichter van OnceMore. Ik maak huisstijl,
+          campagnes, magazines, foto en video voor muziek, lifestyle en
+          maatschappelijke opdrachtgevers.
+        </p>
+      </section>
+
+      <section class="block" aria-labelledby="ervaring">
+        <h2 id="ervaring">Ervaring</h2>
+        <div class="items">
+          <article class="job">
+            <div class="meta">
+              <h3>Content creator</h3>
+              <p class="org">CBF</p>
+              <p class="when">2025 — heden</p>
+            </div>
+            <p class="text">
+              Ontwikkelt contentstrategie en maakt foto, video, copy en visuals
+              voor online en offline. Beheert sociale media en de website,
+              monteert storytellingvideo’s en schrijft voor blogs, campagnes en
+              nieuwsbrieven.
+            </p>
+          </article>
+
+          <article class="job">
+            <div class="meta">
+              <h3>Oprichter en grafisch vormgever</h3>
+              <p class="org">OnceMore™</p>
+              <p class="when">2025 — heden</p>
+            </div>
+            <p class="text">
+              Leidt een studio voor visuele identiteit, campagnes en magazines.
+              Ontwerpt logo’s, typografie en lay-out voor muziek- en
+              lifestylemerken, en maakt merchandise, albumhoezen, posters en
+              eventbranding.
+            </p>
+          </article>
+
+          <article class="job">
+            <div class="meta">
+              <h3>Allround creative</h3>
+              <p class="org">Stichting CasaCasla</p>
+              <p class="when">2025 — heden</p>
+            </div>
+            <p class="text">
+              Verzorgt social media, nieuwsbrieven, website en campagnes, en de
+              interne en externe communicatie. Houdt de branding consistent, van
+              content en design tot storytelling.
+            </p>
+          </article>
+
+          <article class="job">
+            <div class="meta">
+              <h3>Marketing- en communicatiespecialist</h3>
+              <p class="org">QuaWonen</p>
+              <p class="when">2024 — 2025</p>
+            </div>
+            <p class="text">
+              Beheerde sociale media en de visuele identiteit. Maakte content
+              voor interne en externe communicatie en versterkte de online
+              aanwezigheid.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="block" aria-labelledby="projecten">
+        <h2 id="projecten">Overige projecten</h2>
+        <div class="items">
+          <article class="job">
+            <div class="meta">
+              <h3>Creative lead</h3>
+              <p class="org">Anna Speller (K-Otic)</p>
+              <p class="when">2026 — heden</p>
+            </div>
+            <p class="text">
+              Vertaalt ideeën naar content en bepaalt de visuele identiteit en
+              strategie. Ontwikkelt concepten en shoots voor social media, van
+              concept tot uitvoering.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="block" aria-labelledby="opleiding">
+        <h2 id="opleiding">Opleiding</h2>
+        <div class="schools">
+          <div>
+            <h3>Hogeschool Windesheim (Flevoland)</h3>
+            <p class="org">Associate degree Ondernemen</p>
+            <p class="when">2023 — 2025</p>
+          </div>
+          <div>
+            <h3>Hogeschool van Amsterdam</h3>
+            <p class="org">Propedeuse Creative Business</p>
+            <p class="when">2022 — 2023</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="block" aria-labelledby="vaardigheden">
+        <h2 id="vaardigheden">Vaardigheden</h2>
+        <div class="skills">
+          <div>
+            <p>Ontwerp</p>
+            <ul>
+              <li>Grafisch ontwerp</li>
+              <li>Art direction</li>
+              <li>Webdesign (UI/UX)</li>
+              <li>Concept en campagne</li>
+              <li>Social media en content</li>
+              <li>Foto, video en montage</li>
+            </ul>
+          </div>
+          <div>
+            <p>Software</p>
+            <ul class="cols">
+              <li>Illustrator</li>
+              <li>Photoshop</li>
+              <li>InDesign</li>
+              <li>Premiere Pro</li>
+              <li>Figma</li>
+              <li>Framer</li>
+              <li>WordPress</li>
+              <li>Canva</li>
+              <li>Notion</li>
+              <li>Midjourney</li>
+              <li>DALL·E</li>
+              <li>ChatGPT</li>
+            </ul>
+          </div>
+          <div>
+            <p>Talen</p>
+            <ul>
+              <li>Nederlands</li>
+              <li>Engels</li>
+              <li>Duits</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </article>
+  </body>
+</html>
